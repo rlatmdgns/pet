@@ -1,5 +1,5 @@
 import { getEnterpriseId, getToken, handleResponse } from '@/src/shared/lib/helper'
-import { BASE_URL } from '@/src/shared/constants'
+import { BASE_URL } from '@/src/shared/constants/url'
 
 export const headers = () => {
   return {
@@ -11,14 +11,6 @@ export const headers = () => {
 }
 
 export const http = {
-  externalGet: async <T>(url: string, cache?: RequestCache): Promise<T> => {
-    const response = await fetch(`${url}`, {
-      method: 'GET',
-      cache: cache || 'no-store',
-    })
-    return handleResponse<T>(response)
-  },
-
   get: async <T>(url: string, cache?: RequestCache): Promise<T> => {
     const response = await fetch(`${BASE_URL}${url}`, {
       method: 'GET',
