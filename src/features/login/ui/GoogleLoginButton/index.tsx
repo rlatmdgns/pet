@@ -2,12 +2,8 @@
 import React from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { IoArrowForwardOutline } from 'react-icons/io5'
-import { login } from '@/src/features/login/api/login'
 
 export const GoogleLoginButton = () => {
-  const handleLogin = async () => {
-    login('GOOGLE')
-  }
   return (
     <a
       href="https://api.rumor-lab.com/oauth2/GOOGLE/login"
