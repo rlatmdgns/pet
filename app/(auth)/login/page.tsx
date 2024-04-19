@@ -1,15 +1,8 @@
 import React from 'react'
-import { GoogleLoginButton } from '@/src/features/login/ui/GoogleLoginButton'
+import { LoginPage } from '@/src/pages/login/ui/LoginPage'
 
-const LoginPage = () => {
-  return (
-    <section className="w-lvw h-lvh flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-3xl">로그인</h1>
-        <GoogleLoginButton />
-      </div>
-    </section>
-  )
+const Login = () => {
+  return <LoginPage />
 }
 
-export default LoginPage
+export default Login
