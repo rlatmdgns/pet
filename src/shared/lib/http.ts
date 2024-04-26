@@ -1,4 +1,4 @@
-import { getEnterpriseId, getToken, handleResponse } from '@/src/shared/lib/helper'
+import { getToken, handleResponse } from '@/src/shared/lib/helper'
 import { BASE_URL } from '@/src/shared/constants/url'
 
 export const headers = () => {
@@ -6,7 +6,6 @@ export const headers = () => {
     accept: 'application/json',
     'Content-Type': 'application/json',
     authorization: `Bearer ${getToken()}`,
-    'enterprise-id': `${getEnterpriseId()}`,
   }
 }
 
@@ -35,7 +34,6 @@ export const http = {
       headers: {
         accept: 'application/json',
         Authorization: `Bearer ${getToken()}`,
-        'enterprise-id': `${getEnterpriseId()}`,
       },
       body: formData,
     })

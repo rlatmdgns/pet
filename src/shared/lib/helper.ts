@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie'
 
-export const getToken = () => Cookies.get('token')
-export const getEnterpriseId = () => Cookies.get('enterpriseId')
+export const getToken = () => Cookies.get('accessToken')
 
 interface SteadResponse extends Response {
   data?: any
@@ -12,7 +11,6 @@ export const handleResponse = async <T>(response: SteadResponse) => {
 
   if (!response.ok) {
     Cookies.remove('token')
-    Cookies.remove('enterpriseId')
   }
 
   if (!response.ok) {
