@@ -20,9 +20,13 @@ export const Editor = () => {
       FileHandler.configure({
         allowedMimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp'],
         onDrop: (currentEditor, files, pos) => {
-          files.forEach((file) => {
+          files.forEach(async (file) => {
             const fileReader = new FileReader()
+            const formData = new FormData()
+            formData.append('file', new Blob(files), files?.at(0)?.name)
 
+            const result = await http.postForm(API_URL.FILES, formData)
+            console.log(result)
             fileReader.readAsDataURL(file)
             fileReader.onload = () => {
               currentEditor
