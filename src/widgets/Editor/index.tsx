@@ -44,7 +44,7 @@ export const Editor = () => {
               return false
             }
             const formData = new FormData()
-            formData.append('file', file)
+            formData.append('file', new Blob(files), files?.at(0)?.name)
 
             const result = await http.postForm(API_URL.FILES, formData)
 

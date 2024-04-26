@@ -32,7 +32,7 @@ export const http = {
     const response = await fetch(`${BASE_URL}${url}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${getToken()}`,
       },
       body: formData,
