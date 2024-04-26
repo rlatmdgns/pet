@@ -3,8 +3,6 @@ import { BASE_URL } from '@/src/shared/constants/url'
 
 export const headers = () => {
   return {
-    accept: 'application/json',
-    'Content-Type': 'application/json',
     authorization: `Bearer ${getToken()}`,
   }
 }
