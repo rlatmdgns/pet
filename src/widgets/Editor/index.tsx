@@ -46,9 +46,7 @@ export const Editor = () => {
             const formData = new FormData()
             formData.append('file', file)
 
-            const result = await http.post(API_URL.FILES, {
-              file: formData,
-            })
+            const result = await http.postForm(API_URL.FILES, formData)
 
             console.log(result)
 

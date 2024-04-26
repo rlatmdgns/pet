@@ -3,6 +3,8 @@ import { BASE_URL } from '@/src/shared/constants/url'
 
 export const headers = () => {
   return {
+    accept: 'application/json',
+    'Content-Type': 'application/json',
     authorization: `Bearer ${getToken()}`,
   }
 }
@@ -30,7 +32,7 @@ export const http = {
     const response = await fetch(`${BASE_URL}${url}`, {
       method: 'POST',
       headers: {
-        accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${getToken()}`,
       },
       body: formData,
