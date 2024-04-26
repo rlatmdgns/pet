@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-export const getToken = () => Cookies.get('accessToken')
+export const getToken = () => Cookies.get('access-token')
 
 interface SteadResponse extends Response {
   data?: any
