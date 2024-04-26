@@ -11,6 +11,7 @@ import Cookies from 'js-cookie'
 
 export const Editor = () => {
   console.log(Cookies.get('accessToken'))
+  console.log(Cookies.get('access-token'))
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
