@@ -7,8 +7,10 @@ import { FileHandler } from '@tiptap-pro/extension-file-handler'
 import { Image } from '@tiptap/extension-image'
 import { API_URL } from '@/src/shared/constants/api'
 import { http } from '@/src/shared/lib/http'
+import Cookies from 'js-cookie'
 
 export const Editor = () => {
+  console.log(Cookies.get('accessToken'))
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -51,7 +53,7 @@ export const Editor = () => {
             })
 
             console.log(result)
-            
+
             currentEditor
               .chain()
               .insertContentAt(currentEditor.state.selection.anchor, {
